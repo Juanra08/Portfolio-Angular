@@ -3,16 +3,16 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 
-// ⚠️ IMPORTANTE: Reemplaza estos valores con tu configuración de Firebase
-// Obtén estos valores de tu proyecto en https://console.firebase.google.com
+// 🔐 SEGURIDAD: Lee las credenciales desde variables de entorno (.env.local)
+// Nunca hardcodees credenciales en el código
 const firebaseConfig = {
-  apiKey: "AIzaSyCDOj9BHA076cLFRD2wUf4NLZujHtq_7EI",
-  authDomain: "portfolio-c5399.firebaseapp.com",
-  projectId: "portfolio-c5399",
-  storageBucket: "portfolio-c5399.firebasestorage.app",
-  messagingSenderId: "698291542160",
-  appId: "1:698291542160:web:63550b1643156d5e7ba015",
-  measurementId: "G-L6GV07P1ZY"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Inicializar Firebase
